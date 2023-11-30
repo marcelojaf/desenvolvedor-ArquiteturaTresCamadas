@@ -19,5 +19,19 @@
         /// Valor do produto
         /// </summary>
         public decimal Valor { get; set; }
+
+        /// <summary>
+        /// Id do Fornecedor do produto
+        /// </summary>
+        public Guid FornecedorId { get; set; }
+
+
+
+        /* EF Relations */
+
+        /// <summary>
+        /// Fornecedor do produto
+        /// </summary>
+        public Fornecedor Fornecedor { get; set; }
     }
 }

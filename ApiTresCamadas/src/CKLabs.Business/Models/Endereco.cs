@@ -39,5 +39,12 @@
         /// Estado do endereço
         /// </summary>
         public string? Estado { get; set; }
+
+        /* EF Relations */
+
+        /// <summary>
+        /// Fornecedor ao qual o endereço pertence
+        /// </summary>
+        public Fornecedor Fornecedor { get; set; }
     }
 }

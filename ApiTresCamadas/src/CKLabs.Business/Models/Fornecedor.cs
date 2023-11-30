@@ -27,6 +27,10 @@ namespace CKLabs.Business.Models
         /// </summary>
         public Endereco? Endereco { get; set; }
 
+
+
+        /* EF Relations */
+
         /// <summary>
         /// Lista de Produtos do Fornecedor
         /// </summary>
