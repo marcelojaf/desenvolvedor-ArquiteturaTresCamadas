@@ -26,5 +26,10 @@ namespace CKLabs.Business.Models
         /// Endereço do Fornecedor
         /// </summary>
         public Endereco? Endereco { get; set; }
+
+        /// <summary>
+        /// Lista de Produtos do Fornecedor
+        /// </summary>
+        public IEnumerable<Produto> Produtos { get; set; }
     }
 }

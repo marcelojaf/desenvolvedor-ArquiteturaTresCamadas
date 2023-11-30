@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using CKLabs.Business.Helpers;
+using FluentValidation;
 
 namespace CKLabs.Business.Models.Validations
 {
@@ -13,15 +14,15 @@ namespace CKLabs.Business.Models.Validations
         public ProdutoValidation()
         {
             RuleFor(p => p.Nome)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 200).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 200).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             RuleFor(p => p.Descricao)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 1000).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 1000).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             RuleFor(p => p.Valor)
-                .GreaterThan(0).WithMessage(ValidationMessages.GreaterThanMessage());
+                .GreaterThan(0).WithMessage(ValidationMessages.CampoPrecisaSerMaior());
         }
     }
 }

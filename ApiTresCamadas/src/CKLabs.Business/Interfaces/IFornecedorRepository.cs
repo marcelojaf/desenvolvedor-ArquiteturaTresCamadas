@@ -27,5 +27,12 @@ namespace CKLabs.Business.Interfaces
         /// <param name="fornecedorId"></param>
         /// <returns></returns>
         Task<Endereco> ObterEnderecoPorFornecedor(Guid fornecedorId);
+
+        /// <summary>
+        /// Remove um endereço de um fornecedor
+        /// </summary>
+        /// <param name="endereco"></param>
+        /// <returns></returns>
+        Task RemoverEnderecoFornecedor(Endereco endereco);
     }
 }

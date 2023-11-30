@@ -1,5 +1,6 @@
 ﻿using CKLabs.Business.Interfaces;
 using CKLabs.Business.Models;
+using CKLabs.Business.Models.Validations;
 
 namespace CKLabs.Business.Services
 {
@@ -16,7 +17,7 @@ namespace CKLabs.Business.Services
         /// <summary>
         /// Construtor
         /// </summary>
-        public ProdutoService(IProdutoRepository produtoRepository)
+        public ProdutoService(IProdutoRepository produtoRepository, INotificador notificador) : base(notificador)
         {
             _produtoRepository = produtoRepository;
         }
@@ -29,6 +30,8 @@ namespace CKLabs.Business.Services
         /// <exception cref="NotImplementedException"></exception>
         public async Task Adicionar(Produto produto)
         {
+            if (!ExecutarValidacao(new ProdutoValidation(), produto)) return;
+
             await _produtoRepository.Adicionar(produto);
         }
 
@@ -40,6 +43,8 @@ namespace CKLabs.Business.Services
         /// <exception cref="NotImplementedException"></exception>
         public async Task Atualizar(Produto produto)
         {
+            if (!ExecutarValidacao(new ProdutoValidation(), produto)) return;
+
             await _produtoRepository.Atualizar(produto);
         }
 

@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using CKLabs.Business.Helpers;
+using FluentValidation;
 
 namespace CKLabs.Business.Models.Validations
 {
@@ -13,28 +14,28 @@ namespace CKLabs.Business.Models.Validations
         public EnderecoValidation()
         {
             RuleFor(e => e.Logradouro)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 200).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 200).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             RuleFor(e => e.Numero)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(1, 50).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(1, 50).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             RuleFor(e => e.CEP)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(8).WithMessage(ValidationMessages.FixedLengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(8).WithMessage(ValidationMessages.CampoPrecisaTerTamanhoFixo());
 
             RuleFor(e => e.Bairro)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 100).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 100).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             RuleFor(e => e.Cidade)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 100).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 100).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             RuleFor(e => e.Estado)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 50).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 50).WithMessage(ValidationMessages.CampoComTamanhoErrado());
         }
     }
 }

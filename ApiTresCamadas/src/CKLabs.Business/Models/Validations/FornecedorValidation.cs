@@ -1,4 +1,5 @@
 ﻿using CKLabs.Business.Enums;
+using CKLabs.Business.Helpers;
 using CKLabs.Business.Models.Validations.Documentos;
 using FluentValidation;
 
@@ -15,23 +16,23 @@ namespace CKLabs.Business.Models.Validations
         public FornecedorValidation()
         {
             RuleFor(f => f.Nome)
-                .NotEmpty().WithMessage(ValidationMessages.RequiredMessage())
-                .Length(2, 200).WithMessage(ValidationMessages.LengthMessage());
+                .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
+                .Length(2, 200).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaFisica, () =>
             {
                 RuleFor(f => f.Documento.Length).Equal(CpfValidacao.TamanhoCpf)
-                    .WithMessage(ValidationMessages.FixedLengthMessage());
+                    .WithMessage(ValidationMessages.CampoPrecisaTerTamanhoFixo());
                 RuleFor(f => CpfValidacao.Validar(f.Documento)).Equal(true)
-                    .WithMessage(ValidationMessages.InvalidDocumentMessage());
+                    .WithMessage(ValidationMessages.DocumentoInvalido());
             });
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaJuridica, () =>
             {
                 RuleFor(f => f.Documento.Length).Equal(CnpjValidacao.TamanhoCnpj)
-                    .WithMessage(ValidationMessages.FixedLengthMessage());
+                    .WithMessage(ValidationMessages.CampoPrecisaTerTamanhoFixo());
                 RuleFor(f => CnpjValidacao.Validar(f.Documento)).Equal(true)
-                    .WithMessage(ValidationMessages.InvalidDocumentMessage());
+                    .WithMessage(ValidationMessages.DocumentoInvalido());
             });
         }
     }
