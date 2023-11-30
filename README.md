@@ -6,6 +6,12 @@ Este projeto é uma implementação de uma API Web utilizando a arquitetura em t
 
 A API Web foi desenvolvida utilizando a plataforma ASP.NET e segue a arquitetura em três camadas, que consiste em separar a aplicação em camadas de apresentação, lógica de negócio e acesso a dados. Isso permite uma melhor organização do código e facilita a manutenção e evolução do sistema.
 
+Em relação ao código fornecido pelo portal desenvolvedor.io, eu fiz umas alterações como:
+
+- Implementação da documentação XML nos projetos
+- Classe base para os modelos com campos Ativo e Data de Cadastro
+- Mensagens de validação em arquivos separados.
+
 ## Recursos
 
 A API Web oferece os seguintes recursos:
@@ -29,6 +35,6 @@ Contribuições são bem-vindas! Se você encontrar algum problema ou tiver algu
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença XYZ]. Consulte o arquivo LICENSE para obter mais informações.
+Os direitos pertencem ao portal [desenvolvedor.io][https://desenvolvedor.io].
 
 [https://desenvolvedor.io]: http://www.desenvolvedor.io
