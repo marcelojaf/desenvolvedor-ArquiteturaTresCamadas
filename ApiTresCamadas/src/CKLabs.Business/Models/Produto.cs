@@ -32,6 +32,6 @@
         /// <summary>
         /// Fornecedor do produto
         /// </summary>
-        public Fornecedor Fornecedor { get; set; }
+        public Fornecedor? Fornecedor { get; set; }
     }
 }

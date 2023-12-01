@@ -59,6 +59,11 @@ namespace CKLabs.Data.Context
             base.OnModelCreating(modelBuilder);
         }
 
+        /// <summary>
+        /// Salvando alterações no banco de dados
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))

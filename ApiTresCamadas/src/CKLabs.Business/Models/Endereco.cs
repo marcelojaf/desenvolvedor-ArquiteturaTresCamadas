@@ -50,6 +50,6 @@
         /// <summary>
         /// Fornecedor ao qual o endereço pertence
         /// </summary>
-        public Fornecedor Fornecedor { get; set; }
+        public Fornecedor? Fornecedor { get; set; }
     }
 }

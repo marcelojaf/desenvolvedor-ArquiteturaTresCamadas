@@ -34,6 +34,6 @@ namespace CKLabs.Business.Models
         /// <summary>
         /// Lista de Produtos do Fornecedor
         /// </summary>
-        public IEnumerable<Produto> Produtos { get; set; }
+        public IEnumerable<Produto>? Produtos { get; set; }
     }
 }

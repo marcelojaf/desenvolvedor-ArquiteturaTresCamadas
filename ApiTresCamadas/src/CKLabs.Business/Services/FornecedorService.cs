@@ -30,8 +30,10 @@ namespace CKLabs.Business.Services
         /// <returns></returns>
         public async Task Adicionar(Fornecedor fornecedor)
         {
+#pragma warning disable CS8631 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
             if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
                 || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) return;
+#pragma warning restore CS8631 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
 
             if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento).Result.Any())
             {
@@ -75,7 +77,7 @@ namespace CKLabs.Business.Services
                 return;
             }
 
-            if (fornecedor.Produtos.Any())
+            if (fornecedor.Produtos == null || fornecedor.Produtos.Any())
             {
                 Notificar("O fornecedor possui produtos cadastrados");
                 return;

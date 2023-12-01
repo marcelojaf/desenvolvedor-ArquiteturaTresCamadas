@@ -15,16 +15,22 @@ namespace CKLabs.Business.Models.Validations
         /// </summary>
         public FornecedorValidation()
         {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8604 // Possible null reference argument.
             RuleFor(f => f.Nome)
                 .NotEmpty().WithMessage(ValidationMessages.CampoObrigatório())
                 .Length(2, 200).WithMessage(ValidationMessages.CampoComTamanhoErrado());
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaFisica, () =>
             {
+
                 RuleFor(f => f.Documento.Length).Equal(CpfValidacao.TamanhoCpf)
                     .WithMessage(ValidationMessages.CampoPrecisaTerTamanhoFixo());
+
+
                 RuleFor(f => CpfValidacao.Validar(f.Documento)).Equal(true)
                     .WithMessage(ValidationMessages.DocumentoInvalido());
+
             });
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaJuridica, () =>
@@ -34,6 +40,8 @@ namespace CKLabs.Business.Models.Validations
                 RuleFor(f => CnpjValidacao.Validar(f.Documento)).Equal(true)
                     .WithMessage(ValidationMessages.DocumentoInvalido());
             });
+#pragma warning restore CS8604 // Possible null reference argument.
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
     }
 }
