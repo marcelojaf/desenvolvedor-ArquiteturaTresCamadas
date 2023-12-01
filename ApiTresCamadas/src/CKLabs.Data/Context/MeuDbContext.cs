@@ -49,6 +49,8 @@ namespace CKLabs.Data.Context
                 property.SetColumnType("varchar(100)");
             }
 
+            modelBuilder.Entity<Produto>().Property(p => p.Valor).HasColumnType("decimal(18,2)");
+
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;

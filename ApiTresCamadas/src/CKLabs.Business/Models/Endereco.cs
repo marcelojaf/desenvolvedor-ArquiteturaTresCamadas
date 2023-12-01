@@ -6,6 +6,11 @@
     public class Endereco : BaseEntity
     {
         /// <summary>
+        /// Id do fornecedor ao qual o endereço pertence
+        /// </summary>
+        public Guid FornecedorId { get; set; }
+
+        /// <summary>
         /// Logradouro do endereço
         /// </summary>
         public string? Logradouro { get; set; }
