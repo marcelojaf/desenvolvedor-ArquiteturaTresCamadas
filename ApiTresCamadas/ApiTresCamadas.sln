@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKLabs.Data", "src\CKLabs.Data\CKLabs.Data.csproj", "{9DBCECEA-FFD1-4F16-BF2A-ED79EA331A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKLabs.Data", "src\CKLabs.Data\CKLabs.Data.csproj", "{9DBCECEA-FFD1-4F16-BF2A-ED79EA331A28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKLabs.Business", "src\CKLabs.Business\CKLabs.Business.csproj", "{ADBF9DCD-027B-42EE-9BE0-8DAADDD4FF69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKLabs.Business", "src\CKLabs.Business\CKLabs.Business.csproj", "{ADBF9DCD-027B-42EE-9BE0-8DAADDD4FF69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKLabs.Api", "src\CKLabs.Api\CKLabs.Api.csproj", "{ED502C73-6BE6-4E65-8E02-53F3D3630403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{ADBF9DCD-027B-42EE-9BE0-8DAADDD4FF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBF9DCD-027B-42EE-9BE0-8DAADDD4FF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBF9DCD-027B-42EE-9BE0-8DAADDD4FF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED502C73-6BE6-4E65-8E02-53F3D3630403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED502C73-6BE6-4E65-8E02-53F3D3630403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED502C73-6BE6-4E65-8E02-53F3D3630403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED502C73-6BE6-4E65-8E02-53F3D3630403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
