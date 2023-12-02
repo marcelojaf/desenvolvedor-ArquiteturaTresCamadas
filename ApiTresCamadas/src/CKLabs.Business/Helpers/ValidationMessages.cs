@@ -21,7 +21,7 @@
         /// Mensagem de campo com tamanho inválido
         /// </summary>
         /// <returns></returns>
-        public static string CampoPrecisaTerTamanhoFixo() => "O campo {PropertyName} precisa ter {MaxLength} caracteres";
+        public static string CampoPrecisaTerTamanhoFixo() => "O campo {PropertyName} precisa ter {ComparisonValue} caracteres e foram fornecidos {PropertyValue}";
 
         /// <summary>
         /// Mensagem de campo com valor inválido

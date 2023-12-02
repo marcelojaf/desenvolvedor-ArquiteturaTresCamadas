@@ -23,22 +23,20 @@ namespace CKLabs.Business.Models.Validations
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaFisica, () =>
             {
-
                 RuleFor(f => f.Documento.Length).Equal(CpfValidacao.TamanhoCpf)
-                    .WithMessage(ValidationMessages.CampoPrecisaTerTamanhoFixo());
-
+                    .WithMessage("O campo Documento (CPF) precisa ter {ComparisonValue} caracteres e foi fornecido {PropertyValue}.");
 
                 RuleFor(f => CpfValidacao.Validar(f.Documento)).Equal(true)
-                    .WithMessage(ValidationMessages.DocumentoInvalido());
-
+                    .WithMessage("O documento fornecido é inválido.");
             });
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaJuridica, () =>
             {
                 RuleFor(f => f.Documento.Length).Equal(CnpjValidacao.TamanhoCnpj)
-                    .WithMessage(ValidationMessages.CampoPrecisaTerTamanhoFixo());
+                    .WithMessage("O campo Documento (CNPJ) precisa ter {ComparisonValue} caracteres e foi fornecido {PropertyValue}.");
+
                 RuleFor(f => CnpjValidacao.Validar(f.Documento)).Equal(true)
-                    .WithMessage(ValidationMessages.DocumentoInvalido());
+                    .WithMessage("O documento (CNPJ) fornecido é inválido.");
             });
 #pragma warning restore CS8604 // Possible null reference argument.
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
