@@ -20,4 +20,8 @@
     <ProjectReference Include="..\CKLabs.Data\CKLabs.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
